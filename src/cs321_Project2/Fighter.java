@@ -76,7 +76,7 @@ public class Fighter {
 						else
 							return false; // fighter 2 gets the buff
 					}
-					else if((fighter1.weapon.archetype.LONG & fighter2.weapon.archetype.MEDIUM) | (fighter1.weapon.archetype.LONG & fighter2.weapon.archetype.SHORT) | (fighter1.weapon.archetype.MEDIUM & fighter2.weapon.archetype.SHORT))
+					else if((fighter1.weapon.archetype == WeaponArchetype.LONG & fighter2.weapon.archetype == WeaponArchetype.MEDIUM) | (fighter1.weapon.archetype == WeaponArchetype.LONG & fighter2.weapon.archetype == WeaponArchetype.SHORT) | (fighter1.weapon.archetype == WeaponArchetype.MEDIUM & fighter2.weapon.archetype == WeaponArchetype.SHORT))
 					{ // fighter 1 has longer weapon
 						return true;
 					}
@@ -125,7 +125,7 @@ public class Fighter {
 		
 		public int GetAttackPerformance(Fighter fighter)
 		{
-			int total;
+			int total = 0;
 			int dieValue;
 			Random randomNum = new Random();
 			for(int i = 0; i < fighter.weapon.attackRating; i++)
@@ -138,7 +138,7 @@ public class Fighter {
 		
 		public int GetDefensePerformance(Fighter fighter)
 		{
-			int total;
+			int total = 0;
 			int dieValue;
 			Random randomNum = new Random();
 			for(int i = 0; i < fighter.weapon.defenseRating; i++)
