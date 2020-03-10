@@ -9,11 +9,12 @@ package cs321_Project2;
 import java.lang.Integer;
 
 public class Jester {	
-	String winbet; //Initializes 
+	String winbet;
   	
 	/**
-	*Takes two fighter arguments, and prints out appropriate predictions based on a series of comparisons.
-	*Also saves the name of the predicted fighter as a string to be used later. 
+	* @param Two fighter arguments 
+	* Prints out appropriate predictions based on a series of comparisons.
+	* Also saves the name of the predicted fighter as a string to be used later. 
 	*/
 	void CommentOnStart(Fighter F1, Fighter F2)
 	{
@@ -58,14 +59,16 @@ public class Jester {
 	}
 	
 	/**
-	*Takes one fighter argument, and prints out an announcement of said fighter's health passing the threshold of 5 damage. 
+	* @param One fighter argument
+	* Prints out an announcement of said fighter's health passing the threshold of 5 damage. 
 	*/
 	void CommentOnMiddle(Fighter F)
 	{
 		System.out.println("Wow! " + F.name + " is looking rough, seems like they're already halfway in their grave!");
 	}
 	/**
-	*Takes one fighter argument, and prints out a reactionary statement after a comparison to check if the winner of the match was the previously predicted victor.
+	* @param One fighter argument
+	* Prints out a reactionary statement after a comparison to check if the winner of the match was the previously predicted victor.
 	*/
 	void CommentOnEnd(Fighter winner)
 	{
