@@ -5,6 +5,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
+/**
+ * Creates a Weapon object for the Fighter class
+ * @author Nicklas Pinkston
+ * @version 1.2
+ * @since 2020-03-08
+ */
 public class WeaponFactory {
 	private static Map<String, Integer> atkRatings = new HashMap<String, Integer>();
 	private static Map<String, Integer> defRatings = new HashMap<String, Integer>();
@@ -12,6 +18,9 @@ public class WeaponFactory {
 	private WeaponArchetype weaponArchetype;
 	private static ArrayList<String> weaponList = new ArrayList<String>();
 	
+	/**
+	 * Creates the ratings used to assign Weapons values. Only called once during runtime
+	 */
 	private static void CreateRatings() {
 		//set weapon list
 		weaponList.add("Halberd");
@@ -53,11 +62,19 @@ public class WeaponFactory {
 		defRatings.put(weaponList.get(8), 3);
 	}
 	
+	/**
+	 * Creates the Weapon Factory based on the Tournament Archetype
+	 * @param tournamentArchetype The Archetype of the given Tournament
+	 */
 	public WeaponFactory(TournamentArchetype tournamentArchetype) {
 		if (weaponList.isEmpty()) { CreateRatings(); } //if the ratings haven't been created then make it
 		weaponArchetype = tournamentArchetype.getWeaponArchetype(tournamentArchetype); //and set the archetype
 	}
 	
+	/**
+	 * Creates the actual Weapon object for the user
+	 * @return A Weapon based on the Factory's WeaponArchetype setting
+	 */
 	public Weapon MakeWeapon() {
 		Weapon weapon = new Weapon();
 		String weaponName = getWeaponName(); //get the name of a weapon to make
@@ -69,6 +86,10 @@ public class WeaponFactory {
 		return weapon;
 	}
 	
+	/**
+	 * Gets the Weapon name based on randomness
+	 * @return A String for the Weapon name
+	 */
 	private String getWeaponName() {
 		//randomly generate a weapon based on archetype
 		Random random = new Random();
