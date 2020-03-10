@@ -6,8 +6,9 @@ package cs321_Project2;
 import java.util.ArrayList;
 import java.util.Random;
 /**
- * @author tab0037
- *
+ * @author Tristan Boler
+ * @version 1.1
+ * @since 3/9/2020
  */
 public class Fighter {
 		int strength;
@@ -21,6 +22,14 @@ public class Fighter {
 		
 		public Fighter() {} //jic
 		
+/** @param Two Fighter arugments
+ *  Compares the strength stat of each fighter.
+ *  If the strength stat is the same the tie will be determined by speed.
+ *  If that ties, the tie will be handled with a coin flip
+ *  returns TRUE so the first fighter receives the boost
+ *  returns FALSE so the second fighter receives the boost
+ */
+	
 		public boolean StrongerThan(Fighter fighter1, Fighter fighter2)
 		{// since there could be a TIE
 		 // a tie breaker will be handled by checking SPEED first
@@ -57,6 +66,15 @@ public class Fighter {
 			//FALSE = FIGHTER 2 GOT THE BUFF
 		}
 		
+	
+/** @param Two Fighter arugments
+ *  Compares the reach stat of each fighter.
+ *  If the reach stat is the same the tie will be determined by weapon archetype.
+ *  If that ties, the tie will be handled with a coin flip
+ *  returns TRUE so the first fighter receives the boost
+ *  returns FALSE so the second fighter receives the boost
+ */
+	
 		public boolean LongerReachedThan(Fighter fighter1, Fighter fighter2)
 		{// same structure as StrongerThan but regarding reach
 				if(fighter1.reach == fighter2.reach)
@@ -101,6 +119,12 @@ public class Fighter {
 				//FALSE = FIGHTER 2 GOT THE BUFF
 		}
 		
+/** @param Two Fighter arugments
+ *  Compares the speed stat of each fighter.
+ *  If that ties, the tie will be handled with a coin flip (modeled after Pokemon's speed tie breaker case too)
+ *  returns TRUE so the first fighter receives the boost
+ *  returns FALSE so the second fighter receives the boost
+ */
 		public boolean FasterThan(Fighter fighter1, Fighter fighter2)
 		{// ''
 			if(fighter1.speed == fighter2.speed) // after finishing this i realized i could just call upon the fasterthan bool function but. whatever.
@@ -122,7 +146,12 @@ public class Fighter {
 			else // fighter 2 is faster
 				return false;
 		}
-		
+	
+/** @param One Fighter arugment
+ *  retrieves the weapon's attack rating which determines how many times a d6 will be rolled
+ *  each roll is totaled up and returned as an int
+ */
+	
 		public int GetAttackPerformance(Fighter fighter)
 		{
 			int total = 0;
@@ -135,6 +164,11 @@ public class Fighter {
 			}
 			return total;
 		}
+	
+/** @param One Fighter arugment
+ *  retrieves the weapon's defense rating which determines how many times a d6 will be rolled
+ *  each roll is totaled up and returned as an int
+ */
 		
 		public int GetDefensePerformance(Fighter fighter)
 		{
