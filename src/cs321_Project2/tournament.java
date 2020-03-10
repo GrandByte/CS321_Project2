@@ -33,7 +33,7 @@ public class tournament {
 			for (int i = 0; i == numFighters; i++) {
 				Fighter temp = new Fighter();
 				Random rnd = new Random();
-				temp.name = names[rnd.nextInt(names.length)];
+				temp.Name = names[rnd.nextInt(names.length)];
 				temp.strength = (rnd.nextInt(10) + 1);
 				temp.reach = (rnd.nextInt(10) + 1);
 				temp.speed = (rnd.nextInt(10) + 1);
@@ -69,6 +69,6 @@ class subTournament extends tournament{
 	
 	public void DetermineWinner(ArrayList<subTournament> subT) {
 		winners.add(PlayMatch(fighter1, fighter2));
-		System.out.println("The winner is " + PlayMatch(fighter1, fighter2).name + " !");
+		System.out.println("The winner is " + PlayMatch(fighter1, fighter2).Name + " !");
 	}
 }
