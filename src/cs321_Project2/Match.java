@@ -1,6 +1,13 @@
 
 package cs321_Project2;
 
+/**
+ * The Match enum, with a random number generator
+ * @author Dalton Cook
+ * @version 1.3
+ * @since 2020-03-08
+ */
+
 import java.util.Random;
 
 public class Match {
@@ -8,21 +15,37 @@ public class Match {
 	//Fighter fighter2 = new Fighter();
 	Jester jester = new Jester();
 	
+	/**
+	 * @param a figher who has fallen below half health.
+	 * Sends a signal during the fight for the jester to commentate on the inputted fighter reaching half health
+	 */
 	void SignalMiddleToJester(Fighter F)
 	{
 		jester.CommentOnMiddle(F);
 	}
 	
+	/**
+	 * @param an integer x 
+	 * Generates x random variables in between 1 and 6 (corrected from 0 to 5 by adding 1 to result) 
+	 * @return the sum of said series of random numbers.
+	 * Used to circumvent temporarily modifying fighter's base attack and defense values, reducing risk of mutation.
+	 */
 	int d6roll(int x)
 	{
+		Random random = new Random()
 		int count = 0, sum = 0;
 		for (count = 0; count < x; count++)
 		{
-			sum += random.nextInt(6);
+			sum += random.nextInt(6) + 1;
 		}
 		return sum;
 	}
 	
+	/**
+	 * @param two fighters
+	 * Simulates a duel between two fighters, using the provided ruleset and accounting for ability score bonuses. 
+	 * @return the victorious fighter.
+	 */
 	Fighter PlayMatch(Fighter fighter1, Fighter fighter2)
 	{
 		//fighter1 = F1;
