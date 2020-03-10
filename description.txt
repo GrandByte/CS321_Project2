@@ -1,0 +1,4 @@
+Nick - Weapons, WeaponFactory, WeaponArchetype, Menu
+Dalton - Jester, Match
+Tristan - Fighter
+Felix - Tournament, Subtournament
