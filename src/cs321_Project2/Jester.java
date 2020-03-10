@@ -1,3 +1,5 @@
+package cs321_Project2;
+
 import java.lang.Integer;
 
 public class Jester {	
