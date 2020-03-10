@@ -69,6 +69,6 @@ class subTournament extends tournament{
 	
 	public void DetermineWinner(ArrayList<subTournament> subT) {
 		winners.add(PlayMatch(fighter1, fighter2));
-		System.out.println("The winner is " + PlayMatch( , ).name + " !");
+		System.out.println("The winner is " + PlayMatch(fighter1, fighter2).name + " !");
 	}
 }
