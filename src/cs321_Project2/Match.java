@@ -90,8 +90,8 @@ public class Match {
 		
 		while(f1hp < 10 || f2hp < 10)
 		{
-			f1hp += GetAttackPerformance(fighter2) + d6roll(at2) - GetDefensePerformance(fighter1) - d6roll(def1);
-			f2hp += GetAttackPerformance(fighter1) + d6roll(at1) - GetDefensePerformance(fighter2) - d6roll(def2);
+			f1hp += GetAttackPerformance(fighter2) + d6roll(att2) - GetDefensePerformance(fighter1) - d6roll(def1);
+			f2hp += GetAttackPerformance(fighter1) + d6roll(att1) - GetDefensePerformance(fighter2) - d6roll(def2);
 			
 			if (f1hp > 4 && j1 == false)
 			{
