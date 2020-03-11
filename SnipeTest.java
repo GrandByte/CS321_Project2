@@ -1,5 +1,12 @@
 package cs321_Project2;
 
+/**
+ * The Snipe Unit Testing Program
+ * @author Dalton Cook
+ * @version 1.3
+ * @since 2020-03-10
+ */
+
 import static org.junit.Assert.*;
 
 import org.junit.Before;
@@ -19,8 +26,10 @@ public class SnipeTest {
 	*/
 
 	
+	/**
+	 * Used to initialize the first Snipe class to be tested
+	 */
 
-	//@Before
 	public Snipe beforeEach1(){
 		Snipe sn4 = new Snipe();
 		sn4.beakIsLong = true;
@@ -34,6 +43,9 @@ public class SnipeTest {
 		return sn4;
 	}
 	
+	/**
+	 * Used to initialize the second Snipe class to be tested
+	 */
 	public Snipe beforeEach2()
 		{
 		Snipe sn3 = new Snipe();
@@ -50,6 +62,10 @@ public class SnipeTest {
 	Snipe sn1 = beforeEach1();
 	Snipe sn2 = beforeEach2();
 	
+	/**
+	 * Used to test the GetFoodChance function, to ensure the returned percentage was correct
+	 */
+	
 	@Test
 	public void foodTest() {
 		float sum = sn1.GetFoodChance(sn1);
@@ -65,7 +81,10 @@ public class SnipeTest {
 		
 		//fail("Not yet implemented");
 	}
-
+	
+	/**
+	 * Used to test the GetSurvivalChance function, to ensure the returned percentage was correct
+	 */
 	@SuppressWarnings("deprecation")
 	@Test
 	public void surviveTest() {
@@ -78,7 +97,10 @@ public class SnipeTest {
 		
 		//fail("Not yet implemented");
 	}
-
+	
+	/**
+	 * Used to test the GenerateOffspring function, to test how the function creates offspring with different parameters
+	 */
 	@Test
 	public void geneTest() {
 		Snipe x = new Snipe();
